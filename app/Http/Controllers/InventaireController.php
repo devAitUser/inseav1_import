@@ -16,6 +16,12 @@ use App\Models\Organigramme;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
 
+use App\Models\Piece;
+use App\Models\Typologie;
+
+use App\Exports\ClassExport;
+
+
 class InventaireController extends Controller
 {
     public function index()
@@ -302,6 +308,17 @@ class InventaireController extends Controller
             $import = new UsersImport($inventaireId, $champs);
             $tests =  Excel::import($import, $request->file('xlsx')->store('temp'));
             return 55;     
+    }
+
+
+    public function generate_file_excel(){
+
+        
+           echo 'Terminer avec succes';
+          return Excel::download(new ClassExport, 'nom-du-fichier.xlsx');
+
+      
+
     }
 
 

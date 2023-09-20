@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableTopographiqueTable extends Migration
+class CreateTypologiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateTableTopographiqueTable extends Migration
      */
     public function up()
     {
-        Schema::create('table_topographiques', function (Blueprint $table) {
+        Schema::create('typologies', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_rayonnages');
-            $table->foreign('id_rayonnages')->references('id')->on('rayonnages')->onDelete('cascade');
-            $table->string('cote_topographique');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateTableTopographiqueTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_topographique');
+        Schema::dropIfExists('typologies');
     }
 }

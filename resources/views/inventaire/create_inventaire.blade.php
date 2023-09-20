@@ -150,7 +150,7 @@
                                <input type="text" class="form-control" name="champs[]" required>  
                             @endif
                             @if ($field_inventaire->type_champs == 'Date')
-                               <input type="date" class="form-control" name="champs[]" required> 
+                               <input type="date" class="form-control" name="champs[]"  data-date-format="DD MMMM YYYY" required> 
                             @endif
                             @if ($field_inventaire->type_champs == 'cote')
                             <div class="block_select">

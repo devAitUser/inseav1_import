@@ -219,7 +219,7 @@ p.top_header {
                       <p> Accueil </p> 
                      </li>
 
-                     @if (Auth::user()->hasPermissionTo('Gestion physique')) 
+           
                      <li class="icon_menu   {{ request()->is('gestion_physique')  ? 'active' : '' }} ">
                         <a href="{{route('gestion_physique')}}">
                         <span class="material-icons">
@@ -228,7 +228,7 @@ p.top_header {
                         </a>
                         Gestion physique
                      </li>
-                     @endif
+                     
 
                
 

@@ -326,4 +326,8 @@ Route::post('/import1',[\App\Http\Controllers\InventaireController::class,'impor
 //Route::get('/inventaire_edit/{id}', [App\Http\Controllers\InventaireController::class, 'edit'])->name('inventaire_edit');
 
 
-Route::get('/api/get-champs', [InventaireController::class, 'getChamps']);
+//oute::get('/api/get-champs', [InventaireController::class, 'getChamps']);
+
+
+
+Route::get('/generate_file_excel', [\App\Http\Controllers\InventaireController::class, 'generate_file_excel']);

@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\Models\Value_field;
+use App\Models\Piece;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 use Illuminate\Support\Collection;
@@ -87,7 +87,14 @@ class UsersImport implements ToCollection, WithHeadingRow
         //     }
         // }
 
-        dd($rows[0]['mois']);
+
+
+        for ($i=0; $i < count($rows) ; $i++) { 
+              $newName = new Piece();
+              $newName->pieces = $rows[$i]['pieces'];
+              $newName->matricule = $rows[$i]['matricule'];
+              $newName->save();
+        }
     
         echo 'Importation réussie.';
     }         
